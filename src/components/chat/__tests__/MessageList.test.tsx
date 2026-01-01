@@ -78,7 +78,8 @@ test("MessageList renders messages with parts", () => {
   render(<MessageList messages={messages} />);
 
   expect(screen.getByText("Creating your component...")).toBeDefined();
-  expect(screen.getByText("str_replace_editor")).toBeDefined();
+  // ToolCallBadge shows a user-friendly message, not the raw tool name
+  expect(screen.getByText("Modifying file")).toBeDefined();
 });
 
 test("MessageList shows content for assistant message with content", () => {
